@@ -1,0 +1,182 @@
+select{
+    outline: medium none;
+}
+/*class here*/
+.clear{
+    padding:20px;
+}
+.narrowClear{
+    padding:10px;
+}
+.logo-leftDiv{
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.logo-right{
+    float: right;
+}
+.logoTxt{
+    font-size: 25px;
+    display: inline;
+}
+.btn-hidden{
+    border:none;
+    background-color: transparent;
+    display: block;
+    height:70px;
+    width: 70px;
+    background-size: 100% 100%;
+}
+.btn-square{
+    display: block;
+    height:70px;
+    width: 70px;
+    background-size: 100% 100%;
+    border-style:solid;
+    border-width: 2px 1px 2px 1px;
+    border-color: white;
+    border-radius: 3px;
+}
+.btn-square:hover{
+    border: 3px solid deepskyblue;
+}
+
+.header-nav{
+    background-color: #E5E5E5;
+}
+.selectBar-nav{
+    font-size: large;
+    margin-top: 13px;
+}
+.select-nav{
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    background-color: transparent;
+    text-align: center;
+    font-family: "BentonSans Bold";
+    color: #999999;
+    cursor: pointer;
+}
+.select-span{
+    position:absolute;
+    border:1px solid #E5E5E5;
+}
+.tag-span{
+    display: inline-block;
+    width: 142px;
+    border:none;
+    margin-left: 2px;
+    font-size: 20px;
+    font-family: "BentonSans Medium";
+    color: #999999;
+    text-align: center;
+}
+.apply{
+    font-family: "BentonSans Bold";
+    color: #05BFF3;
+}
+.picSelectedDiv img{
+    width: 60px;
+    height:60px;
+    margin-left:5px;
+}
+.exchangeDiv{
+    margin-top: -20px;
+}
+/*css for detail.html*/
+.backLink{
+    display: inline;
+    list-style: none;
+    margin-top: 10px;
+}
+.backLink a{
+    color: #999999;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration:none;
+}
+.aDisabled{
+    color: #CCC;
+    cursor: default;
+}
+.txtBar{
+    min-height: 300px;
+    overflow: auto;
+    margin-top: 15px;
+}
+.txtBar p{
+    color: #999999;
+}
+.chordBar{
+    width: 400px;
+    height: 400px;
+}
+.mainPicContainer{
+    min-height: 300px;
+    height: 300px;
+    margin-top: 15px;
+}
+.listPicContainer{
+    min-height: 300px;
+    overflow: auto;
+}
+.chartsTitle{
+    color: #999999;
+}
+.largePic{
+    height: 100%;
+}
+.selectedPic{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+.picTitle{
+    color: #999999;
+    font-size: 18px;
+}
+/*id here*/
+#submit-btn{
+    background-color: #05BFF3;
+    height: 64px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #05BFF3;
+    color: white;
+    font-family: "BentonSans Regular";
+    font-size: 20px;
+}
+#exchangeTab ul{
+    list-style:none;
+}
+#exchangeTab li{
+    display: inline;
+    margin-left: 50px;
+    font-size: 20px;
+}
+#exchangeTab li.active{
+    border-bottom: 5px solid deepskyblue;
+}
+#exchangeTab li a {
+    text-decoration:none;
+    color: black;
+    font-family: "BentonSans Bold";
+}
+#exchangeTab li a:hover {
+    text-decoration:none;
+    color: #05BFF3;
+}
+#designedShoe{
+    height: 500px;
+    border: 1px solid #CCC;
+}
+#designedShoe img{
+    width: 100%;
+}
+/*for detail.html*/
+#picTable img{
+    width: 70px;
+    height: 70px;
+    border: 1px solid white;
+}

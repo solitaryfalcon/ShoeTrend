@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SHOE TREND</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="build/source/echarts.js" type="text/javascript"></script>
+</head>
+<body>
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="logo-leftDiv col-sm-4">
+                <img src="img/logo.png"/>
+                <img src="img/logo2.png"/>
+                <div class="col-sm-offset-3 exchangeDiv">
+                    <ul id="exchangeTab">
+                        <li role="presentation" class="active">
+                            <a href="#trend" aria-controls="serverStatus" role="tab" data-toggle="tab">
+                                TREND</a>
+                        </li>
+                        <li role="presentation">
+                            <span class="aDisabled">DESIGN</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <img src="img/logo4.png" class="logo-right"/>
+        </div>
+    </div>
+</header>
+
+<div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="trend">
+        <div class="container-fluid header-nav">
+            <div class="row ">
+                <ul class="backLink col-sm-12">
+                    <li class="col-sm-2">
+                        <a href="index.html">< Back</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col-sm-12 txtBar">
+                <div class="col-sm-3">
+                    <img class="selectedPic" id="selectedPic"/>
+                </div>
+                <p class="picTitle col-sm-9">Gallery Name</p>
+                <p class="col-sm-9">For girls, heel shoes are important and fashion to wear,
+                    you can help your daughter add style to the practice</p>
+                <p class="col-sm-12">
+                    With girls' heels from Payless, you can help your daughter add style to the practice.
+                    For girls, mastering the art of wearing heels is an important part of growing up.
+                    With girls' heels from Payless, you can help your daughter add style to the practice.
+                    For girls, mastering the art of wearing heels is an important part of growing up.What's more……
+                </p>
+            </div>
+            <div class="col-sm-12 chordBar">
+                <h4 class="chartsTitle">Elements relationship Chart</h4>
+                <div class="chordBar" id="chord"></div>
+            </div>
+        </div>
+        <div class=" col-sm-8">
+            <div class="col-sm-12 mainPicContainer">
+                <img src="img/dataSource/designedShoe.jpg" class="largePic" id="largePic"/>
+            </div>
+            <div class="col-sm-12 listPicContainer">
+                <div class="narrowClear"></div>
+                <table>
+                    <tbody id="picTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="forSomeOtherRequirement">
+    </div>
+</div>
+<script src="js/detail.js"></script>
+<script src="js/chord.js"></script>
+</body>
+</html>
