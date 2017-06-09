@@ -1,45 +1,91 @@
 //get the color buttons
-var doc = document;
+var doc = document,
+    designPeople = "men",
+    designOrigins = "1",
+    designOccasions = "home",
+    designYear = "2017",
+    picsURL = "http://118.89.183.92:8080/zappos/Servlet?people="+designPeople+"&origins="+designOrigins+"&occasions="+occasions+"&year="+designYear;
+
+function insertDesignPics(){
+    $.ajax({
+        type:"get",
+        url: picsURL,
+        dataType: "json",
+        jsonp: "callback",
+        success: function (data) {
+            dataSource = data;
+            setDesignPics("design_color1","design_color2","design_color3",dataSource.Color);
+            setDesignPics("design_style1","design_style2","design_style3",dataSource.ShoeStyle);
+            setDesignPics("design_heelStyle1","design_heelStyle2","design_heelStyle3",dataSource.HeelStyle);
+            setDesignPics("design_toeStyle1","design_toeStyle1","design_toeStyle1",dataSource.ToeStyle);
+            setDesignPics("design_shoeType1","design_shoeType2","design_shoeType3",dataSource.ShoeType);
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(errorThrown);
+        }
+    });
+}
+doc.getElementById("design_apply").onclick = function () {
+    var designPeopleSelected = doc.getElementById("designPeople"),
+        designOriginsSelected = doc.getElementById("designOrigins"),
+        designOccasionsSelected = doc.getElementById("designOccasions"),
+        designYearSelected = doc.getElementById("designYear");
+    designPeople = designPeopleSelected.options[designPeopleSelected.selectedIndex].text;
+    designOrigins = designOriginsSelected.options[designOriginsSelected.selectedIndex].text;
+    designOccasions = designOccasionsSelected.options[designOccasionsSelected.selectedIndex].text;
+    designYear = designYearSelected.options[designYearSelected.selectedIndex].text;
+    var selectedURL = "http://118.89.183.92:8080/zappos/Servlet?people="+designPeople+"&origins="+designOrigins+"&occasions="+designOccasions+"&year="+designYear;
+    $.ajax({
+        type:"get",
+        url: selectedURL,
+        dataType: "json",
+        jsonp: "callback",
+        success: function (data) {
+            dataSource = data;
+            setDesignPics("design_color1","design_color2","design_color3",dataSource.Color);
+            setDesignPics("design_style1","design_style2","design_style3",dataSource.ShoeStyle);
+            setDesignPics("design_heelStyle1","design_heelStyle2","design_heelStyle3",dataSource.HeelStyle);
+            setDesignPics("design_toeStyle1","design_toeStyle1","design_toeStyle1",dataSource.ToeStyle);
+            setDesignPics("design_shoeType1","design_shoeType2","design_shoeType3",dataSource.ShoeType);
+            console.log(selectedURL);
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(errorThrown);
+        }
+    });
+}
+doc.getElementById("design_clear").onclick = function () {
+    location.reload();
+}
 
 //function for set pictures into btn
-function setPics(id1,id2,picName){
+function setDesignPics(id1,id2,id3,picSource){
     var div1 = doc.getElementById(id1),
         div2 = doc.getElementById(id2),
+        div3 = doc.getElementById(id3),
         group1 = div1.getElementsByTagName("button"),
         group2 = div2.getElementsByTagName("button"),
-        disCount1 = 0,
-        disCount2 = 0;
-    for(var i = 0; i<group1.length; i++){
-        if(group1[i].disabled){
-            disCount1 ++;
-        }
-        else if(!group1[i].disabled){
-            group1[i].style.backgroundImage = "url(./img/dataSource/"+picName+(i-(disCount1-1))+".png)";
+        group3 = div3.getElementsByTagName("button"),
+        counter = 0;
+    for(var i = 0; i<group1.length,counter<picSource.length; i++){
+        if(!group1[i].disabled){
+            group1[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            counter++;
         }
     }
-    for(var i = 0; i<group2.length; i++){
-        if(group2[i].disabled){
-            disCount2 ++;
-        }
+    for(var i = 0; i<group2.length,counter<picSource.length; i++){
         if(!group2[i].disabled){
-            group2[i].style.backgroundImage = "url(./img/dataSource/" + picName + (i + (7-disCount1)-disCount2-1) + ".png)";
+            group2[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            counter++;
+        }
+    }
+    for(var i = 0; i<group3.length,counter<picSource.length; i++){
+        if(!group3[i].disabled){
+            group3[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            counter++;
         }
     }
 }
-
-//set color
-setPics("color1","color2","color")
-//set style
-setPics("style1","style2","style");
-//set shoeType
-setPics("shoeType1","shoeType2","shoeType");
-//set pattern
-setPics("pattern1","pattern2","pattern");
-//set focus
-//setPics("focus1","focus2","focus");
-//set Heel
-setPics("heel1","heel2","heel");
-setPics("material1","material2","material");
 
 //multi-select 
 function mutiSelect() {
@@ -57,7 +103,8 @@ function mutiSelect() {
                     this.style.borderWidth = "3px";
                     this.style.borderStyle = "dashed";
                     //add selected pics to selected div
-                    var source = this.style.backgroundImage.replace("url(\"\./","").replace("\")","");
+                    var source = this.style.backgroundImage.replace("url(\"","").replace("\")","");
+                    console.log(source);
                     var img = doc.createElement("img");
                     img.src = source;
                     img.id = this.id;
@@ -92,4 +139,5 @@ function submitData() {
     }
     console.log(selectedBtn);
 }
-window.onload = mutiSelect();
+addLoadEvent(mutiSelect());
+addLoadEvent(insertDesignPics());

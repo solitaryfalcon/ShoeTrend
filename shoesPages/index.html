@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/publicFunc.js"></script>
 </head>
 <body>
 <header>
@@ -41,7 +42,7 @@
                     <ul class="nav selectBar-nav col-sm-10">
                         <li class="col-sm-2">
                         <span class="select-span">
-                            <select class="select-nav">
+                            <select class="select-nav" id="people">
                                 <option>People</option>
                                 <option>men</option>
                                 <option>women</option>
@@ -52,7 +53,7 @@
                         </li>
                         <li class="col-sm-offset-1 col-sm-2">
                         <span class="select-span">
-                            <select class="select-nav">
+                            <select class="select-nav" id="origins">
                                 <option>Origins</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -63,7 +64,7 @@
                         </li>
                         <li class="col-sm-offset-1 col-sm-2">
                         <span class="select-span">
-                            <select class="select-nav">
+                            <select class="select-nav" id="occasions">
                                 <option>Occasions</option>
                                 <option>Office</option>
                                 <option>Home</option>
@@ -73,7 +74,7 @@
                         </li>
                         <li class="col-sm-offset-1 col-sm-2">
                         <span class="select-span">
-                            <select class="select-nav">
+                            <select class="select-nav" id="year">
                                 <option>Year/Season</option>
                                 <option>2017</option>
                                 <option>2016</option>
@@ -85,10 +86,10 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right col-sm-2">
-                        <a class="navbar-brand apply" id="trend_apply" href="javascript:void(0)" onclick="">
+                        <a class="navbar-brand apply" id="trend_apply" href="javascript:void(0)">
                             Apply
                         </a>
-                        <a class="navbar-brand col-sm-offset-1" href="javascript:void(0)" onclick="">
+                        <a class="navbar-brand col-sm-offset-1" id="trend_clear" href="javascript:void(0)">
                             <small>Clear</small>
                         </a>
                     </ul>
@@ -117,6 +118,15 @@
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
                     </div>
+                    <div class="btn-group-vertical" id="trend_color3">
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                    </div>
                     <div class="btn-group-vertical" id="trend_style1">
                         <button type="button" class="btn-hidden" disabled></button>
                         <button type="button" class="btn-hidden" disabled></button>
@@ -135,10 +145,73 @@
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
                     </div>
+                    <div class="btn-group-vertical" id="trend_style3">
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                    </div>
+                    <div class="btn-group-vertical" id="trend_heelStyle1">
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                    </div>
+                    <div class="btn-group-vertical" id="trend_heelStyle2">
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                    </div>
+                    <div class="btn-group-vertical" id="trend_heelStyle3">
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                    </div>
+                    <div class="btn-group-vertical" id="trend_toeStyle1">
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                    </div>
+                    <div class="btn-group-vertical" id="trend_toeStyle2">
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                    </div>
+                    <div class="btn-group-vertical" id="trend_toeStyle3">
+                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
+                    </div>
                     <div class="btn-group-vertical" id="trend_shoeType1">
                         <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
+                        <button type="button" class="btn-square"></button>
+                        <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
@@ -146,69 +219,6 @@
                     </div>
                     <div class="btn-group-vertical" id="trend_shoeType2">
                         <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_pattern1">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_pattern2">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_focus1">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_foucs2">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_heel1">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_heel2">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_boots1">
-                        <button type="button" class="btn-hidden" disabled></button>
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
@@ -216,43 +226,7 @@
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
                     </div>
-                    <div class="btn-group-vertical" id="trend_boots2">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_others1">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_others2">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_material1">
-                        <button type="button" class="btn-hidden" disabled></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                        <button type="button" class="btn-square"></button>
-                    </div>
-                    <div class="btn-group-vertical" id="trend_material2">
+                    <div class="btn-group-vertical" id="trend_shoeType3">
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
                         <button type="button" class="btn-square"></button>
@@ -265,13 +239,9 @@
                 <div class="col-sm-offset-1 col-sm-11">
                     <span class="tag-span">Color</span>
                     <span class="tag-span">Style</span>
+                    <span class="tag-span">Heel Style</span>
+                    <span class="tag-span">Toe Style</span>
                     <span class="tag-span">Shoe Type</span>
-                    <span class="tag-span">Pattern</span>
-                    <span class="tag-span">Focus</span>
-                    <span class="tag-span">Heel</span>
-                    <span class="tag-span">Boots</span>
-                    <span class="tag-span">Others</span>
-                    <span class="tag-span">Material</span>
                 </div>
             </div>
         </div>
@@ -283,7 +253,7 @@
                 <ul class="nav selectBar-nav col-sm-10">
                     <li class="col-sm-2">
                         <span class="select-span">
-                            <select class="select-nav">
+                            <select class="select-nav" id="designPeople">
                                 <option>People</option>
                                 <option>men</option>
                                 <option>women</option>
@@ -294,7 +264,7 @@
                     </li>
                     <li class="col-sm-offset-1 col-sm-2">
                         <span class="select-span">
-                            <select class="select-nav">
+                            <select class="select-nav" id="designOrigins">
                                 <option>Origins</option>
                                 <option>1</option>
                                 <option>2</option>
@@ -305,7 +275,7 @@
                     </li>
                     <li class="col-sm-offset-1 col-sm-2">
                         <span class="select-span">
-                            <select class="select-nav">
+                            <select class="select-nav" id="designOccasions">
                                 <option>Occasions</option>
                                 <option>Office</option>
                                 <option>Home</option>
@@ -315,7 +285,7 @@
                     </li>
                     <li class="col-sm-offset-1 col-sm-2">
                         <span class="select-span">
-                            <select class="select-nav">
+                            <select class="select-nav" id="designYear">
                                 <option>Year/Season</option>
                                 <option>2017</option>
                                 <option>2016</option>
@@ -327,10 +297,10 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right col-sm-2">
-                    <a class="navbar-brand apply" id="design_apply" href="javascript:void(0)" onclick="">
+                    <a class="navbar-brand apply" id="design_apply" href="javascript:void(0)">
                         Apply
                     </a>
-                    <a class="navbar-brand col-sm-offset-1" href="javascript:void(0)" onclick="">
+                    <a class="navbar-brand col-sm-offset-1" id="design_clear" href="javascript:void(0)">
                         <small>Clear</small>
                     </a>
                 </ul>
@@ -341,7 +311,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="btn-group col-sm-offset-1 col-sm-11" id="btnGroup">
-                <div class="btn-group-vertical" id="color1">
+                <div class="btn-group-vertical" id="design_color1">
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
@@ -350,7 +320,7 @@
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                 </div>
-                <div class="btn-group-vertical" id="color2">
+                <div class="btn-group-vertical" id="design_color2">
                     <button type="button" class="btn-hidden" disabled></button>
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
@@ -359,97 +329,7 @@
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                 </div>
-                <div class="btn-group-vertical" id="style1">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="style2">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="shoeType1">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="shoeType2">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="pattern1">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="pattern2">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="focus1">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="foucs2">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="heel1">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="heel2">
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-hidden" disabled></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                    <button type="button" class="btn-square"></button>
-                </div>
-                <div class="btn-group-vertical" id="boots1">
+                <div class="btn-group-vertical" id="design_color3">
                     <button type="button" class="btn-hidden" disabled></button>
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
@@ -458,7 +338,61 @@
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                 </div>
-                <div class="btn-group-vertical" id="boots2">
+                <div class="btn-group-vertical" id="design_style1">
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                </div>
+                <div class="btn-group-vertical" id="design_style2">
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                </div>
+                <div class="btn-group-vertical" id="design_style3">
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                </div>
+                <div class="btn-group-vertical" id="design_heelStyle1">
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                </div>
+                <div class="btn-group-vertical" id="design_heelStyle2">
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                </div>
+                <div class="btn-group-vertical" id="design_heelStyle3">
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                </div>
+                <div class="btn-group-vertical" id="design_toeStyle1">
                     <button type="button" class="btn-hidden" disabled></button>
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
@@ -467,7 +401,7 @@
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                 </div>
-                <div class="btn-group-vertical" id="others1">
+                <div class="btn-group-vertical" id="design_toeStyle2">
                     <button type="button" class="btn-hidden" disabled></button>
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
@@ -476,7 +410,7 @@
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                 </div>
-                <div class="btn-group-vertical" id="others2">
+                <div class="btn-group-vertical" id="design_toeStyle3">
                     <button type="button" class="btn-hidden" disabled></button>
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
@@ -485,7 +419,7 @@
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                 </div>
-                <div class="btn-group-vertical" id="material1">
+                <div class="btn-group-vertical" id="design_shoeType1">
                     <button type="button" class="btn-hidden" disabled></button>
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
@@ -494,7 +428,16 @@
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                 </div>
-                <div class="btn-group-vertical" id="material2">
+                <div class="btn-group-vertical" id="design_shoeType2">
+                    <button type="button" class="btn-hidden" disabled></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                    <button type="button" class="btn-square"></button>
+                </div>
+                <div class="btn-group-vertical" id="design_shoeType3">
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
                     <button type="button" class="btn-square"></button>
@@ -507,13 +450,9 @@
             <div class="col-sm-offset-1 col-sm-11">
                 <span class="tag-span">Color</span>
                 <span class="tag-span">Style</span>
+                <span class="tag-span">Heel Style</span>
+                <span class="tag-span">Toe Style</span>
                 <span class="tag-span">Shoe Type</span>
-                <span class="tag-span">Pattern</span>
-                <span class="tag-span">Focus</span>
-                <span class="tag-span">Heel</span>
-                <span class="tag-span">Boots</span>
-                <span class="tag-span">Others</span>
-                <span class="tag-span">Material</span>
             </div>
             <div class="col-sm-12">
                 <div class="clear"></div>
