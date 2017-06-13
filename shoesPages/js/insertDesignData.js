@@ -1,6 +1,6 @@
 //get the color buttons
 var doc = document,
-    designPeople = "men",
+    designPeople = "women",
     designOrigins = "1",
     designOccasions = "home",
     designYear = "2017",
@@ -66,22 +66,27 @@ function setDesignPics(id1,id2,id3,picSource){
         group1 = div1.getElementsByTagName("button"),
         group2 = div2.getElementsByTagName("button"),
         group3 = div3.getElementsByTagName("button"),
+        imgSource = picSource.src,
+        imgId = picSource.id,
         counter = 0;
-    for(var i = 0; i<group1.length,counter<picSource.length; i++){
+    for(var i = 0; i<group1.length&counter<imgSource.length; i++){
         if(!group1[i].disabled){
-            group1[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            group1[i].style.backgroundImage = "url(http://"+imgSource[counter]+")";
+            group1[i].id = imgId[counter];
             counter++;
         }
     }
-    for(var i = 0; i<group2.length,counter<picSource.length; i++){
+    for(var i = 0; i<group2.length&counter<imgSource.length; i++){
         if(!group2[i].disabled){
-            group2[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            group2[i].style.backgroundImage = "url(http://"+imgSource[counter]+")";
+            group2[i].id = imgId[counter];
             counter++;
         }
     }
-    for(var i = 0; i<group3.length,counter<picSource.length; i++){
+    for(var i = 0; i<group3.length&counter<imgSource.length; i++){
         if(!group3[i].disabled){
-            group3[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            group3[i].style.backgroundImage = "url(http://"+imgSource[counter]+")";
+            group3[i].id = imgId[counter];
             counter++;
         }
     }
@@ -93,7 +98,7 @@ function mutiSelect() {
         flag = false;
     var selectedDiv = doc.getElementById("selectedDiv");
     for(var i = 0; i<btnGroup.length; i++){
-        btnGroup[i].id = i;
+        //btnGroup[i].id = i;
         if(!btnGroup[i].disabled)
             btnGroup[i].flag = false;
             btnGroup[i].onclick = function () {

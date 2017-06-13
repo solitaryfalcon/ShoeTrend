@@ -1,6 +1,6 @@
 //get the color buttons
 var doc = document,
-    people = "men",
+    people = "women",
     origin = "1",
     occasions = "home",
     year = "2017",
@@ -19,6 +19,7 @@ function insertPics(){
             setTrendPics("trend_heelStyle1","trend_heelStyle2","trend_heelStyle3",dataSource.HeelStyle);
             setTrendPics("trend_toeStyle1","trend_toeStyle1","trend_toeStyle1",dataSource.ToeStyle);
             setTrendPics("trend_shoeType1","trend_shoeType2","trend_shoeType3",dataSource.ShoeType);
+            //console.log(dataSource.Color.id);
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             alert(errorThrown);
@@ -66,22 +67,27 @@ function setTrendPics(id1,id2,id3,picSource){
         group1 = div1.getElementsByTagName("button"),
         group2 = div2.getElementsByTagName("button"),
         group3 = div3.getElementsByTagName("button"),
+        imgSource = picSource.src,
+        imgId = picSource.id,
         counter = 0;
-    for(var i = 0; i<group1.length,counter<picSource.length; i++){
+    for(var i = 0; i<group1.length&counter<imgSource.length; i++){
        if(!group1[i].disabled){
-            group1[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            group1[i].style.backgroundImage = "url(http://"+imgSource[counter]+")";
+            group1[i].id = imgId[counter];
            counter++;
         }
     }
-    for(var i = 0; i<group2.length,counter<picSource.length; i++){
+    for(var i = 0; i<group2.length&counter<imgSource.length; i++){
         if(!group2[i].disabled){
-            group2[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            group2[i].style.backgroundImage = "url(http://"+imgSource[counter]+")";
+            group2[i].id = imgId[counter];
             counter++;
         }
     }
-    for(var i = 0; i<group3.length,counter<picSource.length; i++){
+    for(var i = 0; i<group3.length&counter<imgSource.length; i++){
         if(!group3[i].disabled){
-            group3[i].style.backgroundImage = "url(http://"+picSource[counter]+")";
+            group3[i].style.backgroundImage = "url(http://"+imgSource[counter]+")";
+            group3[i].id = imgId[counter];
             counter++;
         }
     }
@@ -91,7 +97,7 @@ function setTrendPics(id1,id2,id3,picSource){
 function toDetailPage() {
     var btnGroup = doc.getElementById("trend_btnGroup").getElementsByTagName("button");
     for(var i = 0; i<btnGroup.length; i++){
-        btnGroup[i].id = i;
+        //btnGroup[i].id = i;
         if(!btnGroup[i].disabled) {
             btnGroup[i].onclick = function () {
                 window.location = "detail.html?id="+this.id;
